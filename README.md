@@ -54,7 +54,9 @@ Headroom is a **scenario-driven capacity harness**. You describe a population (N
 
 The output is a sentence a reviewer, an auditor or an investor can check:
 
-> *`escrow` accepts up to **1,187 open escrows** in one instance. At 1,188 the write fails: the contract instance entry reaches **65,624 of 65,536 bytes**. CPU at that point is 6.1% of its budget — compute is not the constraint and will never be.*
+> *`registry` accepts up to **1,362 registrants** in one instance. At 1,363 the write fails: the contract instance entry reaches **65,546 of 65,536 bytes**. CPU is a small fraction of its budget — compute is not the constraint and will never be.*
+>
+> (Illustrative: the numbers come from the worked example below, not from a run.)
 
 ---
 

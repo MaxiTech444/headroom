@@ -12,8 +12,9 @@ network and measures throughput, latency and error rate under concurrency. Headr
 generates **state** and measures at what population a contract's own resource usage
 crosses a protocol limit.
 
-A load test at 500 requests/second will not tell you that your registry dies at 1,318
-registrants, because you would have to register 1,318 accounts to find out, and even
+A load test at 500 requests/second will not tell you that your registry dies at 1,362
+registrants (the README's illustrative example), because you would have to register
+1,362 accounts to find out, and even
 then you would see failures without knowing which limit caused them.
 
 They are complementary: Headroom tells you which N is interesting, a load test tells

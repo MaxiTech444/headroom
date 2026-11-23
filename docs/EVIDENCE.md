@@ -136,18 +136,19 @@ doubled and fee rates halved; a comparison across that boundary is meaningless.
 `docs/CAPACITY-INDEX.md` describes the index; this section describes what a reader
 sees when they arrive.
 
-For each indexed design, one page:
+For each indexed design, one page. The values below are the README's illustrative
+registry example and show the format only; no run has produced them.
 
 ```text
-Design:      escrow — one persistent entry per escrow
-Measured:    2026-11-23, Protocol 29 + SLP-0007
-Contract:    CC227UDF...BHSB, WASM sha256 ccbb6603...48b9
-Scenario:    escrow-open-escrows.toml (hash 9f2c...)
-N*:          1,318   (interval 1,318–1,319)
-Binding:     contract_data_entry_size_bytes  (63,398 / 65,536 = 96.8%)
-Runner-up:   tx_write_entries (2 / 200 = 1.0%)
-Marginal:    +178 bytes of state per escrow, +41,200 CPU per release
-Reproduce:   headroom verify evidence/escrow-open-escrows.cert.json
+Design:      registry — every registrant in one instance Vec
+Measured:    <date>, Protocol 29 + SLP-0007
+Contract:    <contract id>, WASM sha256 <hash>
+Scenario:    registry-instance-overflow.toml (hash <hash>)
+N*:          1,362   (interval 1,362–1,363)
+Binding:     contract_data_entry_size_bytes  (65,498 / 65,536 = 99.9%)
+Runner-up:   tx_write_bytes (65,498 / 132,096 = 49.6%)
+Marginal:    +48 bytes of state per registrant
+Reproduce:   headroom verify evidence/registry-instance-overflow.cert.json
 ```
 
 That block is the unit of the whole project. If the format is boring and complete,

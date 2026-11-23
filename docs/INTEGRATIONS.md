@@ -48,7 +48,8 @@ Concrete integration, three small pieces:
 
 1. A `headroom.toml` in each Forge template, with `start`, `growth` and `max` chosen
    for that design.
-2. A line in the template README: *"Known ceiling: 1,318 open escrows (certificate)."*
+2. A line in the template README: *"Known ceiling: `<N*>` `<unit>` (certificate)."*,
+   filled in from a committed certificate, never by hand.
    One number, linked. That is a stronger template than one that says "production
    ready".
 3. A CI job in Forge that runs the template's scenario and fails if `N*` drops below
