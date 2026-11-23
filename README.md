@@ -142,7 +142,7 @@ A `headroom run` is one command, one config file, no Docker, no funded account, 
 
 ```bash
 headroom run scenarios/escrow-open-escrows.toml \
-  --limits limits/mainnet-2026-10-22.json \
+  --limits limits/mainnet-p29-slp0007.json \
   --out evidence/
 ```
 
