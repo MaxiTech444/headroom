@@ -169,17 +169,28 @@ A registry contract stores every depositor in one instance `Vec<Address>`. Seria
    ≈1,362  addresses
 ```
 
-So the arithmetic predicts a cliff in the low four figures. The **actual** number depends on the SDK's exact XDR encoding, the key length and the contract's own fields — which is precisely why Headroom measures instead of computing from a blog post. The ladder would report something like:
+So the arithmetic predicts a cliff in the low four figures. The **actual** number depends on the SDK's exact XDR encoding, the key length and the contract's own fields — which is precisely why Headroom measures instead of computing from a blog post. The ladder makes the same point with every rung shown.
+
+Taking 48 B per address and the 122 B of overhead implied by the first row, the
+entry is `48·N + 122` bytes, so a geometric probe from 800 (×1.6) followed by
+bisection would report something like:
 
 | N | Setup | Write at measure | Entry size | Binding limit | Headroom |
 |---:|---|---|---:|---|---:|
-| 800 | ok | ok | 38,522 B | entry size | 58.8% |
-| 1,280 | ok | ok | 61,564 B | entry size | 6.1% |
-| 1,360 | ok | **fail** | 65,712 B | **entry size** | −0.3% |
-| 1,320 | ok | ok | 63,492 B | entry size | 3.1% |
-| **1,318** | ok | **ok** | 63,398 B | entry size | **3.2%** |
+| 800 | ok | ok | 38,522 B | entry size | 41.2% |
+| 1,280 | ok | ok | 61,562 B | entry size | 6.1% |
+| 2,048 | ok | **fail** | 98,426 B | **entry size** | −50.2% |
+| 1,376 | ok | **fail** | 66,170 B | **entry size** | −1.0% |
+| 1,328 | ok | ok | 63,866 B | entry size | 2.5% |
+| 1,364 | ok | **fail** | 65,594 B | **entry size** | −0.1% |
+| **1,362** | ok | **ok** | 65,498 B | entry size | **0.06%** |
+| 1,363 | ok | **fail** | 65,546 B | **entry size** | −0.02% |
 
-Result: `N* = 1,318`, binding limit `contract_data_entry_size_bytes`, next-binding limit `write_bytes` (irrelevant — it would not bind until N ≈ 9,000). The fix is therefore not "batch the writes" but "stop putting the registry in instance storage".
+Result: `N* = 1,362` (interval 1,362–1,363), the same figure the arithmetic above
+predicts. Binding limit `contract_data_entry_size_bytes`; runner-up `write_bytes`
+at about 50%, because the whole entry is rewritten on every write — and it can never
+bind first, since a single entry cannot exceed 65,536 B. The fix is therefore not
+"batch the writes" but "stop putting the registry in instance storage".
 
 That last sentence is the product. The numbers are the evidence for it.
 
