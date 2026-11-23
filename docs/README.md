@@ -33,7 +33,6 @@
 | Document | Contents |
 |---|---|
 | [ROADMAP.md](ROADMAP.md) | four weeks to v0.1, then v0.2 and v1.0, with kill criteria |
-| [DRIPS-WAVE.md](DRIPS-WAVE.md) | submission mechanics, org decision, 24 scoped issues |
 | [INTEGRATIONS.md](INTEGRATIONS.md) | WeighIn, Soroban Sentinel, Soroban Forge, CI |
 
 ## Reference

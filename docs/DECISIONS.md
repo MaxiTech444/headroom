@@ -114,7 +114,7 @@ never be used by anyone except this project. That is the cost of a checkable num
 ## D7 — Three crates, strict boundaries
 
 **Context.** A single crate is fastest to start and becomes unnavigable at 5k lines,
-especially for Wave contributors with one week.
+especially for a contributor with one week.
 
 **Decision.** `headroom-scenario` (no host), `headroom-core` (no file parsing), and
 `headroom-cli` (all I/O). A PR should touch one crate.
@@ -129,17 +129,21 @@ cheaper than a shared "common" crate.
 
 ---
 
-## D8 — Separate org for the Wave
+## D8 — One repository, under the author's account
 
-**Context.** Drips Wave applies budgets per repo and per org.
+**Context.** A dedicated organisation was considered, so this project's issues and
+funding would be isolated from the author's other repositories.
 
-**Decision.** Create a dedicated org with this single repository.
+**Decision.** One public repository, `MaxiTech444/headroom`, with no organisation
+around it.
 
 **Alternatives rejected.**
-- *Add as a fifth repo to the existing org* — competes with siblings for a shared
-  point budget, and reads as a portfolio rather than a project.
+- *A dedicated org* — an org holding a single repository, with an extra approval
+  step, for a benefit that only appears once several repositories share a budget.
 
-**Consequence.** A new org, a new approval application, and a cleaner claim.
+**Consequence.** Everything lives in one place. If the Capacity Index grows its own
+tooling, or a second repository starts competing for the same funding, that is the
+point to split.
 
 ---
 
@@ -148,12 +152,13 @@ cheaper than a shared "common" crate.
 **Context.** The concept is the distance between current state and the first limit.
 
 **Alternatives rejected.**
-- *Freeboard* / *Plimsoll* — a Wave repo already uses the nautical load-line metaphor.
+- *Freeboard* / *Plimsoll* — an existing Stellar project already uses the nautical
+  load-line metaphor.
 - *Capacity* — unsearchable and already overloaded.
 - *Ceiling* — sounds like a governance tool.
 
 **Decision.** "Headroom" — the word engineers already use for this exact margin, with
-no collision in the Stellar Wave list.
+no collision among Stellar projects.
 
 ---
 

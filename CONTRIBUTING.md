@@ -12,7 +12,7 @@ Read, in this order:
 1. [`README.md`](README.md) — what the project claims
 2. [`docs/PROBLEM.md`](docs/PROBLEM.md) — why the claim matters
 3. [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — where your change goes
-4. [`docs/DRIPS-WAVE.md`](docs/DRIPS-WAVE.md) — how the work is split
+4. [`docs/ROADMAP.md`](docs/ROADMAP.md) — how the work is split
 
 If an issue is ambiguous, **the issue is the bug**. Comment on it, and the maintainer
 will make it executable. Do not guess at scope and then discover it in review.
@@ -42,7 +42,7 @@ most. Parallel claims from one person turn a review queue into a merge conflict.
 | `complexity: high` | a subsystem, design judgment, a certificate impact |
 | `good first issue` | deliberately self-contained; no host knowledge needed |
 | `needs-decision` | do not start until the maintainer resolves the question |
-| `future` | listed to prevent scope creep; not claimable this Wave |
+| `future` | listed to prevent scope creep; not claimable in the current cycle |
 
 ---
 

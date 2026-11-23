@@ -67,7 +67,7 @@ Chosen to cover the failure modes, not to flatter the tool.
 |---|---|---|---|---|
 | `registry-instance` | IDs in one instance `Vec` | registrants | entry size (65,536 B) | the canonical mistake |
 | `registry-persistent` | one entry per registrant | registrants | write entries or none | the fix, measured |
-| `escrow-open` | one entry per open escrow | concurrent escrows | entry size or none | the most common Wave design |
+| `escrow-open` | one entry per open escrow | concurrent escrows | entry size or none | the most common escrow design |
 | `token-holders` | balance per holder | holders | none (flat cost) | the negative result |
 | `payout-batch` | loop of transfers in one tx | recipients per tx | write entries (200) | the batch illusion |
 

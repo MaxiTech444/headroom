@@ -238,18 +238,18 @@ Full list: [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md).
 
 ---
 
-## How it fits the tools you already run
+## Where it sits next to other tools
 
-Headroom is designed to compose, not to compete, with the four other tools in this space:
+Headroom answers a question the existing Soroban tools do not: **how much state can this design hold before a protocol limit stops it?** It sits beside those tools rather than replacing them — no shared crate, no shared release cadence, and none of them would need Headroom in order to build.
 
-| Tool | Its job | Handoff to Headroom |
-|---|---|---|
-| **WeighIn** | Per-invocation BASE vs HEAD regression gate in CI | WeighIn catches "this PR is 4% more expensive"; Headroom catches "this design has 1,200 users of headroom left" |
-| **Soroban Sentinel** | TTL expiry monitoring and rent forecasting on live contracts | Headroom's rent model at scale feeds Sentinel's forecast; Sentinel's live entries validate Headroom's predicted entry sizes |
-| **Soroban Forge** | Scaffolding and reusable contracts | Forge templates ship with a `headroom.toml` so every new project starts with a known ceiling |
-| **`soroban-meter` / `soroban-budget-assert`** | Per-function budgets in `cargo test` | Those assert a cost; Headroom asserts a population. Both can run in the same CI job |
+| Tool | Its own question | The question Headroom adds | How they combine |
+|---|---|---|---|
+| **WeighIn** | did this change make one call more expensive? | how many users does the design have left? | the certificate names the binding limit, so a CI gate can guard the metric that actually binds instead of defaulting to CPU |
+| **Soroban Sentinel** | what is expiring, and what will rent cost now? | what does rent cost at 10,000 users? | Sentinel reads a certificate's rent block; live entry sizes check Headroom's predictions |
+| **Soroban Forge** | what do I start from? | what ceiling does this template already have? | a template can ship a scenario and a documented `N*` |
+| **`soroban-meter`, `soroban-budget-assert`** | what does this function cost in `cargo test`? | what population does that cost permit? | run one, then write the assertion the other implies |
 
-Details: [`docs/INTEGRATIONS.md`](docs/INTEGRATIONS.md) and [`docs/LANDSCAPE.md`](docs/LANDSCAPE.md).
+None of these handoffs is shipped: this repository is specification only, so the table describes the boundary Headroom intends to respect, not integrations that exist. Each one, with its interface and its refusal cases, is specified in [`docs/INTEGRATIONS.md`](docs/INTEGRATIONS.md); the full comparison against fifteen adjacent tools is in [`docs/LANDSCAPE.md`](docs/LANDSCAPE.md).
 
 ---
 
@@ -258,7 +258,7 @@ Details: [`docs/INTEGRATIONS.md`](docs/INTEGRATIONS.md) and [`docs/LANDSCAPE.md`
 ```text
 headroom/
 ├── README.md                  this document
-├── CONTRIBUTING.md            how to claim work, review standards, Drips flow
+├── CONTRIBUTING.md            how to claim work, review standards, merge bar
 ├── docs/                      the full specification (see index below)
 ├── scenarios/                 example scenarios, one per fixture design
 ├── contracts/fixtures/        contracts written to contain a known cliff
@@ -294,7 +294,6 @@ The layout, and the rule for what may live where, is specified in [`docs/REPOSIT
 
 **The work**
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — four milestones from empty repo to credible v0.1
-- [`docs/DRIPS-WAVE.md`](docs/DRIPS-WAVE.md) — the Wave submission plan, issue tiers and review checklist
 - [`docs/INTEGRATIONS.md`](docs/INTEGRATIONS.md) — WeighIn, Soroban Sentinel, Soroban Forge, CI
 
 **Reference**
@@ -314,7 +313,7 @@ Where a number is arithmetic rather than measurement, it says **illustrative**. 
 
 ## Contributing
 
-The project is built for the **Stellar Wave on Drips**: small, well-scoped, reviewable issues with explicit acceptance criteria and verification commands. Start with [`CONTRIBUTING.md`](CONTRIBUTING.md), then [`docs/DRIPS-WAVE.md`](docs/DRIPS-WAVE.md).
+The work is split into small, reviewable issues, each with explicit acceptance criteria and a verification command, so a change can land in a week without a meeting. Start with [`CONTRIBUTING.md`](CONTRIBUTING.md), then [`docs/ROADMAP.md`](docs/ROADMAP.md) for what is in scope.
 
 ## License
 

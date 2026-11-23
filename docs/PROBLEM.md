@@ -159,7 +159,7 @@ years ago:
    funded accounts — and it is the same technique WeighIn already uses for
    single-invocation measurement.
 3. **The ecosystem is past "does it work" and into "does it hold".** Contracts in
-   the Wave list are shipping escrows, AMMs, registries and NFT collections. The
+   Stellar today are shipping escrows, AMMs, registries and NFT collections. The
    next question for all of them is capacity, and the tooling has not caught up.
 
 ---

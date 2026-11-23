@@ -3,6 +3,10 @@
 > Headroom is one instrument in a set. This document specifies exactly how it hands
 > off to the tools around it, so the ecosystem gains a chain of evidence rather than
 > another silo.
+>
+> None of these handoffs exists yet. The repository is specification only; what
+> follows is the boundary Headroom intends to respect, written down so it can be
+> checked against the implementation once there is one.
 
 ---
 
@@ -149,7 +153,7 @@ The gate is the one that changes behaviour. A worked example for a consuming
 repository:
 
 ```yaml
-- uses: headroom-labs/headroom@<pinned-sha>
+- uses: MaxiTech444/headroom@<pinned-sha>
   with:
     scenario: scenarios/escrow.toml
     limits: limits/mainnet-p29-slp0007.json

@@ -1,8 +1,8 @@
 # Landscape
 
 > Every tool this project could be confused with, what it actually measures, and
-> the precise gap Headroom occupies. Re-checked against the Stellar Wave repo list
-> (965 repos, checked 2026-11-23) and the wider ecosystem.
+> the precise gap Headroom occupies. Re-checked against the public Stellar project
+> list (965 repositories, checked 2026-11-23) and the wider ecosystem.
 
 The honest summary: **the ecosystem is crowded at "how expensive is one call" and
 empty at "how much state can this design hold".** Everything below is a good tool.
@@ -20,10 +20,10 @@ what happens?*
 | `soroban-meter/soroban-meter` | CPU/memory per function from `cargo test`, regression baselines | cost | no | low |
 | `Tollcraft/soroban-budget-assert` | cost assertions as macros + testnet simulation report | cost | no | low |
 | `@57blocks/stellar-resource-usage` | resource usage per function | cost | no | low |
-| `soroban-cost-linter` (Wave) | cost anti-patterns in source | cost | no | low |
+| `soroban-cost-linter` | cost anti-patterns in source | cost | no | low |
 | `WeighInNG/WeighIn` (this author) | BASE vs HEAD resource deltas, CI gate | cost, over revisions | no | none — composes |
 | `soroban-fuzzer` | correctness under random calls | correctness | incidental | low |
-| `CrashLab` (Wave) | crash/failure exploration | correctness | incidental | low |
+| `CrashLab` | crash/failure exploration | correctness | incidental | low |
 | `soroban-sentinel` (this author) | live TTL remaining, rent forecast | time | no | none — composes |
 | `soroban-forge` (this author) | scaffolds, contract foundations, CLI, testnet proof | developer setup | no | none — composes |
 | `Forge-soroban/Forge-soroban` | interactive lab, blueprints, gas estimator UI | cost | no | low |
@@ -168,7 +168,7 @@ Headroom reports a **boundary and its cause**:
 - the margin to the runner-up limit,
 - and the marginal cost per additional unit.
 
-No tool in the Stellar Wave list produces that tuple. That is the whole claim. It
+No tool in the Stellar ecosystem produces that tuple. That is the whole claim. It
 is narrow, it is checkable, and it is not a feature any existing tool could add in a
 day — the population generator, the ladder, the attribution and the certificate are
 each a body of work.
@@ -183,7 +183,7 @@ Stated so the claim can be falsified:
   reports the binding limit.
 - `stellar contract` gains a `scale` subcommand with a scenario file and a
   certificate format.
-- A Wave repo publishes a generalised, scenario-driven capacity harness with a
+- A Stellar project publishes a generalised, scenario-driven capacity harness with a
   public index — not a one-off load script, not a per-project benchmark doc.
 
 If any of those appear, Headroom's value drops to its index and its evidence, and

@@ -31,7 +31,6 @@ headroom/
 │   ├── EVIDENCE.md
 │   ├── CAPACITY-INDEX.md
 │   ├── ROADMAP.md
-│   ├── DRIPS-WAVE.md
 │   ├── INTEGRATIONS.md
 │   ├── LIMITATIONS.md
 │   ├── FAQ.md

@@ -106,7 +106,7 @@ paragraph.
 | Feature | Why it earns its place |
 |---|---|
 | `headroom snapshot` | measure a deployed contract against its real state, not a synthetic one |
-| adapter: `nft`, `orderbook` | the two most-requested Wave designs |
+| adapter: `nft`, `orderbook` | the two most-requested contract designs |
 | HTML report with an N-vs-utilisation chart | the one visual that makes a cliff obvious |
 | GitHub Action | a team should add capacity gating in one line |
 | resume/checkpoint for long ladders | N = 200,000 runs should be interruptible |
@@ -160,7 +160,7 @@ plumbing.
 
 ---
 
-## What a Wave contributor can pick up in week one
+## What a new contributor can pick up in week one
 
 - a limit snapshot loader with hash verification (Medium)
 - the utilisation ranking function with tie-breaking rules (Medium)
