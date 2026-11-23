@@ -317,4 +317,6 @@ The work is split into small, reviewable issues, each with explicit acceptance c
 
 ## License
 
-MIT OR Apache-2.0.
+Dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option — the Rust ecosystem convention, so the crates can be used under whichever fits.
+
+Unless you state otherwise, any contribution you intentionally submit for inclusion in this project is dual-licensed on the same terms, with no additional conditions.
